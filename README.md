@@ -63,7 +63,7 @@ Get your API key at [app.airweave.ai/settings/api-keys](https://app.airweave.ai/
 
 ## Features
 
-- **Unified Search** - Search across 100+ connected data sources with one API
+- **Unified Search** - Search across 35+ connected data sources with one API
 - **Semantic Search** - AI-powered search that understands meaning, not just keywords
 - **Query Expansion** - Automatically expands queries for better recall
 - **Reranking** - ML-based reranking for improved relevance

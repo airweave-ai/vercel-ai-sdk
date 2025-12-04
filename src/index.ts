@@ -146,7 +146,7 @@ export function airweaveSearch(options: AirweaveSearchOptions = {}) {
 
   return tool({
     description:
-      'Search across your synced data sources (Notion, Slack, Google Drive, databases, 100+ apps) using Airweave semantic search.',
+      'Search across your synced data sources (Notion, Slack, Google Drive, databases, 35+ apps) using Airweave semantic search.',
     inputSchema: z.object({
       query: z
         .string()
