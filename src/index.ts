@@ -106,7 +106,7 @@ export interface AirweaveSearchResult {
  * @example
  * ```typescript
  * import { generateText, gateway, stepCountIs } from 'ai';
- * import { airweaveSearch } from '@airweave/ai-sdk';
+ * import { airweaveSearch } from '@airweave/vercel-ai-sdk';
  *
  * const { text } = await generateText({
  *   model: gateway('anthropic/claude-sonnet-4.5'),

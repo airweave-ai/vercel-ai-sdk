@@ -1,5 +1,5 @@
 {
-  "name": "@airweave/ai-sdk",
+  "name": "@airweave/vercel-ai-sdk",
   "version": "0.1.0",
   "description": "Airweave search tool for Vercel AI SDK. Add unified search across 100+ data sources to your AI applications in just a few lines of code.",
   "author": "Airweave",

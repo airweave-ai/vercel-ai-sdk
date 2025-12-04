@@ -5,14 +5,14 @@ Airweave search tool for the [Vercel AI SDK](https://ai-sdk.dev). Search across 
 ## Installation
 
 ```bash
-npm install @airweave/ai-sdk
+npm install @airweave/vercel-ai-sdk
 ```
 
 ## Quick Start
 
 ```typescript
 import { generateText, gateway, stepCountIs } from 'ai';
-import { airweaveSearch } from '@airweave/ai-sdk';
+import { airweaveSearch } from '@airweave/vercel-ai-sdk';
 
 const { text } = await generateText({
   model: gateway('anthropic/claude-sonnet-4.5'),
@@ -79,7 +79,7 @@ import {
   AirweaveSearchOptions, 
   AirweaveSearchResult,
   AirweaveSearchResultItem 
-} from '@airweave/ai-sdk';
+} from '@airweave/vercel-ai-sdk';
 
 const config: AirweaveSearchOptions = {
   defaultCollection: 'my-collection',
