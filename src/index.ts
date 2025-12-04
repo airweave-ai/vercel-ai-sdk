@@ -47,15 +47,69 @@ export interface AirweaveSearchOptions {
 }
 
 /**
+ * System metadata attached to each search result.
+ */
+export interface AirweaveSystemMetadata {
+  source_name?: string;
+  entity_type?: string;
+  sync_id?: string;
+  chunk_index?: number;
+  db_entity_id?: string;
+  db_created_at?: string;
+  db_updated_at?: string;
+}
+
+/**
+ * Breadcrumb for navigation context.
+ */
+export interface AirweaveBreadcrumb {
+  entity_id: string;
+  name: string;
+  entity_type: string;
+}
+
+/**
+ * A single search result item from Airweave.
+ */
+export interface AirweaveSearchResultItem {
+  /** Unique identifier for this result */
+  id: string;
+  /** Relevance score (higher is better) */
+  score: number;
+  /** The entity data */
+  payload: {
+    entity_id?: string;
+    name?: string;
+    created_at?: string;
+    updated_at?: string;
+    breadcrumbs?: AirweaveBreadcrumb[];
+    textual_representation?: string;
+    airweave_system_metadata?: AirweaveSystemMetadata;
+    /** Additional source-specific fields */
+    [key: string]: unknown;
+  };
+}
+
+/**
+ * Search response from Airweave.
+ */
+export interface AirweaveSearchResult {
+  /** Array of search results */
+  results: AirweaveSearchResultItem[];
+  /** AI-generated answer (when generateAnswer is true) */
+  answer?: string;
+}
+
+/**
  * Creates an Airweave search tool for the Vercel AI SDK.
  *
  * @example
  * ```typescript
- * import { generateText, stepCountIs } from 'ai';
+ * import { generateText, gateway, stepCountIs } from 'ai';
  * import { airweaveSearch } from '@airweave/ai-sdk';
  *
  * const { text } = await generateText({
- *   model: 'anthropic/claude-sonnet-4.5',
+ *   model: gateway('anthropic/claude-sonnet-4.5'),
  *   prompt: 'What were the key decisions from last week?',
  *   tools: {
  *     search: airweaveSearch({
@@ -130,7 +184,7 @@ export function airweaveSearch(options: AirweaveSearchOptions = {}) {
       });
 
       return {
-        results: response.results,
+        results: response.results as unknown as AirweaveSearchResultItem[],
         ...(response.completion && { answer: response.completion }),
       };
     },

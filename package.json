@@ -25,6 +25,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "test:e2e": "npx tsx tests/e2e.ts",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
@@ -35,6 +36,7 @@
     "zod": ">=3.0.0"
   },
   "devDependencies": {
+    "@ai-sdk/openai": "^2.0.77",
     "@types/node": "^24.10.1",
     "ai": "^5.0.0",
     "typescript": "^5.7.0",

@@ -11,11 +11,11 @@ npm install @airweave/ai-sdk
 ## Quick Start
 
 ```typescript
-import { generateText, stepCountIs } from 'ai';
+import { generateText, gateway, stepCountIs } from 'ai';
 import { airweaveSearch } from '@airweave/ai-sdk';
 
 const { text } = await generateText({
-  model: 'anthropic/claude-sonnet-4.5',
+  model: gateway('anthropic/claude-sonnet-4.5'),
   prompt: 'What were the key decisions from last week?',
   tools: {
     search: airweaveSearch({
@@ -68,6 +68,43 @@ Get your API key at [app.airweave.ai/settings/api-keys](https://app.airweave.ai/
 - **Query Expansion** - Automatically expands queries for better recall
 - **Reranking** - ML-based reranking for improved relevance
 - **AI Answers** - Optional AI-generated answers from search results
+
+## TypeScript Support
+
+Full TypeScript types included:
+
+```typescript
+import { 
+  airweaveSearch, 
+  AirweaveSearchOptions, 
+  AirweaveSearchResult,
+  AirweaveSearchResultItem 
+} from '@airweave/ai-sdk';
+
+const config: AirweaveSearchOptions = {
+  defaultCollection: 'my-collection',
+  defaultLimit: 10,
+};
+
+const search = airweaveSearch(config);
+
+// Result types
+interface AirweaveSearchResultItem {
+  id: string;                    // Entity ID
+  score: number;                 // Relevance score
+  payload: {
+    entity_id?: string;
+    name?: string;
+    created_at?: string;
+    textual_representation?: string;
+    airweave_system_metadata?: {
+      source_name?: string;      // e.g., "notion", "slack"
+      entity_type?: string;      // e.g., "NotionPageEntity"
+    };
+    // Plus source-specific fields
+  };
+}
+```
 
 ## Documentation
 
