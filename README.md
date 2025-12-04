@@ -1,4 +1,4 @@
-# @airweave/ai-sdk
+# @airweave/vercel-ai-sdk
 
 Airweave search tool for the [Vercel AI SDK](https://ai-sdk.dev). Search across all your synced data sources (Notion, Slack, Google Drive, databases, and 30+ more) in just a few lines of code.
 
