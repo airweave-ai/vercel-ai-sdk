@@ -1,0 +1,53 @@
+{
+  "name": "@airweave/ai-sdk",
+  "version": "0.1.0",
+  "description": "Airweave search tool for Vercel AI SDK. Add unified search across 100+ data sources to your AI applications in just a few lines of code.",
+  "author": "Airweave",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/airweave-ai/vercel-ai-sdk.git"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@airweave/sdk": "^0.7.18"
+  },
+  "peerDependencies": {
+    "ai": ">=4.0.0",
+    "zod": ">=3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "ai": "^5.0.0",
+    "typescript": "^5.7.0",
+    "zod": "^3.23.0"
+  },
+  "keywords": [
+    "ai",
+    "vercel",
+    "airweave",
+    "search",
+    "rag",
+    "tool",
+    "ai-sdk",
+    "semantic-search"
+  ]
+}
