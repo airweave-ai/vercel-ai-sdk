@@ -1,12 +1,12 @@
 {
   "name": "@airweave/vercel-ai-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Airweave search tool for Vercel AI SDK. Add unified search across 35+ data sources to your AI applications in just a few lines of code.",
   "author": "Airweave",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/airweave-ai/vercel-ai-sdk.git"
+    "url": "git+https://github.com/airweave-ai/vercel-ai-sdk.git"
   },
   "type": "module",
   "main": "./dist/index.js",
